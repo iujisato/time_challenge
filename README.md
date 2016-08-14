@@ -2,6 +2,7 @@
 
 Given the time in numerals we may convert it into words, as shown below:
 
+![challenge](https://cloud.githubusercontent.com/assets/12941120/17652295/1e0e9e50-624f-11e6-8398-e5a863ca3b85.png)
 
 - Write a program which prints the time in words for the input given in the format mentioned above.
 
