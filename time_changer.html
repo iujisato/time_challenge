@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+
+<input type="number" id="hour"/>
+<input type="number" id="minute"/>
+<input type="submit" value="Escolher hora!" onclick="submitTime()" />
+
+<script>
+var time = []
+
+function hour() {
+  var value = parseInt(document.getElementById("hour").value);
+    if (isNaN(value)) {
+      return alert ("Hour is not a integer.");
+      }
+
+    if (value < 1 | value > 12) {
+      return alert("Hour must be between 1 and 12.")
+    }
+
+  time.push(value)
+};
+
+function minute() {
+  var value = parseInt(document.getElementById("minute").value);
+    if (isNaN(value)) {
+      return alert ("Minute is not a integer.");
+      }
+
+    if (value < 0 | value > 60) {
+      return alert("Minute must be between 0 and 60.")
+    }
+
+  time.push(value)
+};
+
+function submitTime() {
+  if (time.length > 0) {time = []};
+
+  hour();
+  minute();
+  if (time.length != 2) {time = []};
+  document.getElementById("hour").value = '';
+  document.getElementById("minute").value = '';
+  console.log(time)
+}
+</script>
+
