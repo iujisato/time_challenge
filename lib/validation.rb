@@ -1,5 +1,5 @@
 class Validation
-	attr_accessor :number
+	attr_reader :number
 
 	def initialize(number)
 		@number = number

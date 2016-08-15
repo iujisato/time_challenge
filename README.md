@@ -1,36 +1,20 @@
-# Time Challenge
+# Time Challenge in vanilla RUBY!
 
-Given the time in numerals we may convert it into words, as shown below:
+Simple script to give your time in words!
 
+### Requirements
 
-- Write a program which prints the time in words for the input given in the format mentioned above.
+- Ruby 2.3.1
+  - Not tested with other ruby versions, but doesn't seems to have any problems(check FAQ for ruby 2.3.0).
 
-### Input Format
+### Usage
+- Git clone the repository.
+- On project folder, run `ruby start.rb`.
+- The first input is `hours`.
+- The second input is `minutes`.
 
-There will be two lines of input:
-```
-H, representing the hours
-M, representing the minutes
-```
+### Tests
+- Simply run `rake test`.
 
-Constraints
-```
-1 < H < 12
-
-0 <= M <= 60
-```
-
-### Output Format
-
-Display the time in words.
-
-Sample Input
-````
-5
-47
-```
-
-Sample Output
-```
-thirteen minutes to six
-```
+### Faq
+- There is a warning problem with 2.3.0, so just uncomment warning line on Rakefile.
