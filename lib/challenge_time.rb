@@ -1,7 +1,7 @@
 class ChallengeTime
   attr_reader :hour, :minute
 
-  def initialize(hour=nil, minute=nil)
+  def initialize(hour, minute)
     @hour = hour
     @minute = minute
   end

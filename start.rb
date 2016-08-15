@@ -12,4 +12,5 @@ minute = Validation::Minute.new(gets)
 minute = minute.check_value
 
 time = ChallengeTime.new(hour, minute)
-puts time.word_parser
+puts "Chosen hour was #{"%02i" % hour}:#{"%02i" % minute}"
+puts time.word_parser.capitalize
