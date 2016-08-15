@@ -1,7 +1,7 @@
 class Validation
-	attr_reader :number
+  attr_reader :number
 
-	def initialize(number)
-		@number = number
-	end
+  def initialize(number)
+    @number = number
+  end
 end

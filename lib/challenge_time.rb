@@ -1,20 +1,20 @@
 class ChallengeTime
-	attr_reader :hour, :minute
+  attr_reader :hour, :minute
 
-	def initialize(hour=nil, minute=nil)
-		@hour = hour
-		@minute = minute
-	end
+  def initialize(hour=nil, minute=nil)
+    @hour = hour
+    @minute = minute
+  end
 
-	def word_parser
-    return "#{words_hash(hour)} #{words_hash(minute)}" if minute.eql?(0)
- 		return "#{pluralize(minute)} past #{words_hash(hour)}" if minute <= 30
+  def word_parser
+    return "#{words_hash(hour)} #{words_hash(minute)}" if minute.zero?
+    return "#{pluralize(minute)} past #{words_hash(hour)}" if minute <= 30
     if minute > 30
       new_minute = 60 - minute
       new_hour = hour + 1
       return "#{pluralize(new_minute)} to #{words_hash(new_hour)}"
     end
-	end
+  end
 
   private
 
@@ -57,9 +57,8 @@ class ChallengeTime
   end
 
   def pluralize(n)
-      text   = "#{words_hash(n)} minute" if n.eql?(1)
-      text ||= "#{words_hash(n)}" if n.eql?(15)
-      text ||= "#{words_hash(n)}" if n.eql?(30)
-      text ||= "#{words_hash(n)} minutes"
+    text   = "#{words_hash(n)} minute" if n.eql?(1)
+    text ||= "#{words_hash(n)}" if n.eql?(15) || n.eql?(30)
+    text ||= "#{words_hash(n)} minutes"
   end
 end
