@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Time to Word parser</title>
+
+  <script type="text/javascript" src="assets/javascripts/time_input.js"  defer></script>
+  <script type="text/javascript" src="assets/javascripts/parser.js"      defer></script>
+  <script type="text/javascript" src="assets/javascripts/application.js" defer></script>
+</head>
+
+<body>
+  <p>
+    Hour <input type="number" id="hour" min="1" max="12"/>
+    Minute <input type="number" id="minute" min="0" max="60"/>
+  </p>
+
+  <p><input type="submit" value="Convert time" onclick="submitTime()" /></p>
+</body>
+</html>

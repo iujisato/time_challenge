@@ -1,37 +1,12 @@
-# Time Challenge
+# Time Challenge in vanilla Javasript!
 
-Given the time in numerals we may convert it into words, as shown below:
+Simple page to give your time in words!
 
-![challenge](https://cloud.githubusercontent.com/assets/12941120/17652295/1e0e9e50-624f-11e6-8398-e5a863ca3b85.png)
+### Requirements
+- This simple page seems to be functional on any browser.
+  - Functional on Chrome 50.0 (and probablye later versions).
+  - Functional on Firefox 46.0 (and probably later versions).
 
-- Write a program which prints the time in words for the input given in the format mentioned above.
-
-### Input Format
-
-There will be two lines of input:
-```
-H, representing the hours
-M, representing the minutes
-```
-
-Constraints
-```
-1 < H < 12
-
-0 <= M <= 60
-```
-
-### Output Format
-
-Display the time in words.
-
-Sample Input
-````
-5  
-47  
-``` 
-
-Sample Output
-```
-thirteen minutes to six
-```
+### Usage
+- Git clone the repository.
+- On project folder, open `time_changer.html` on your preferred browser.
