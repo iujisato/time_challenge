@@ -1,22 +1,15 @@
 require './lib/challenge_time'
+require './lib/validation'
+require './lib/validations/hour'
+require './lib/validations/minute'
 
 puts "Escreva as horas"
-hours = Integer(gets) rescue nil
-
-while hours.nil? || !hours.between?(1, 12)  do
-	puts "Valor inválido"
-	puts "Certifique-se de que o número seja inteiro e esteja entre 1 e 12"
-  hours = Integer(gets) rescue nil
-end
+hour = Validation::Hour.new(gets)
+hour = hour.check_value
 
 puts "Escreva os minutos"
-minutes = Integer(gets) rescue nil
+minute = Validation::Minute.new(gets)
+minute = minute.check_value
 
-while minutes.nil? || !minutes.between?(0, 60)  do
-	puts "Valor inválido"
-	puts "Certifique-se de que o número seja inteiro e esteja entre 0 e 60"
-  minutes = Integer(gets) rescue nil
-end
-
-time = ChallengeTime.new(hours, minutes)
+time = ChallengeTime.new(hour, minute)
 puts time.word_parser

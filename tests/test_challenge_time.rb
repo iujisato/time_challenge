@@ -61,6 +61,4 @@ class TestChallengeTime < Test::Unit::TestCase
 
     assert_equal("thirteen minutes to six", time.word_parser)
   end
-
-
 end
