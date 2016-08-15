@@ -61,4 +61,10 @@ class TestChallengeTime < Test::Unit::TestCase
 
     assert_equal("thirteen minutes to six", time.word_parser)
   end
+
+  test "returns correct values for 12:59" do
+    time = ChallengeTime.new(12, 59)
+
+    assert_equal("one minute to one", time.word_parser)
+  end
 end

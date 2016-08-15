@@ -12,6 +12,7 @@ class ChallengeTime
     if minute > 30
       new_minute = 60 - minute
       new_hour = hour + 1
+      new_hour = 1 if hour.eql?(12)
       return "#{pluralize(new_minute)} to #{words_hash(new_hour)}"
     end
   end
