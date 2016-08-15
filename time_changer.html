@@ -1,120 +1,24 @@
-<meta charset="UTF-8">
+<!DOCTYPE HTML>
 
-<input type="number" id="hour"/>
-<input type="number" id="minute"/>
-<input type="submit" value="Escolher hora!" onclick="submitTime()" />
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Time to Word parser</title>
 
-<script>
-var time = {};
+  <script type="text/javascript" src="assets/javascripts/time_input.js"  defer></script>
+  <script type="text/javascript" src="assets/javascripts/parser.js"      defer></script>
+  <script type="text/javascript" src="assets/javascripts/application.js" defer></script>
+</head>
 
-function hour(value) {
-  var value = parseInt(document.getElementById("hour").value);
-    if (isNaN(value)) {
-      alert ("Hour is not a integer.");
-      return time.hour = NaN;
-      }
+<body>
+  <p>
+    Hour <input type="number" id="hour" min="1" max="12"/>
+    Minute <input type="number" id="minute" min="0" max="60"/>
+  </p>
 
-    if (value < 1 | value > 12) {
-      alert("Hour must be between 1 and 12.");
-      return time.hour = NaN;
-    }
+  <p><input type="submit" value="Convert time" onclick="submitTime()" /></p>
+</body>
+</html>
 
-  time.hour = value;
-};
 
-function minute(value) {
-  var value = parseInt(document.getElementById("minute").value);
-    if (isNaN(value)) {
-      alert ("Minute is not a integer.");
-      return time.minute = NaN;
-      }
-
-    if (value < 0 | value > 60) {
-      alert("Minute must be between 0 and 60.");
-      return time.minute = NaN;
-    }
-
-  time.minute = value;
-};
-
-function wordsHash(key) {
-  words_hash = {
-    0: "o' clock",
-    1: "one",
-    2: "two",
-    3: "three",
-    4: "four",
-    5: "five",
-    6: "six",
-    7: "seven",
-    8: "eight",
-    9: "nine",
-    10: "ten",
-    11: "eleven",
-    12: "twelve",
-    13: "thirteen",
-    14: "fourteen",
-    15: "quarter",
-    16: "sixteen",
-    17: "seventeen",
-    18: "eighteen",
-    19: "nineteen",
-    20: "twenty",
-    21: "twenty one",
-    22: "twenty two",
-    23: "twenty three",
-    24: "twenty four",
-    25: "twenty five",
-    26: "twenty six",
-    27: "twenty seven",
-    28: "twenty eight",
-    29: "twenty nine",
-    30: "half"
-  };
-
-  return words_hash[key]
-}
-
-function pluralize(number) {
-  switch (number) {
-    case 1:
-      return wordsHash(number) + " minute";
-
-    case 15:
-    case 30:
-     return wordsHash(number);
-
-    default:
-      wordsHash(number) + " minutes";
-  };
-}
-
-function wordParser(time) {
-  switch (true) {
-    case (time.minute == 0):
-      return wordsHash(time.hour) + " " + wordsHash(time.minute);
-
-    case (time.minute <= 30):
-      return pluralize(time.minute) + " past " + wordsHash(time.hour);
-
-    case (time.minute > 30):
-      new_minute = 60 - time.minute;
-      new_hour = time.hour + 1;
-      return pluralize(new_minute) + " to " + wordsHash(new_hour)
-  }
-}
-
-function submitTime() {
-  hour();
-  minute();
-  document.getElementById("hour").value = '';
-  document.getElementById("minute").value = '';
-  console.log(time);
-  if (isNaN(time.hour) | isNaN(time.minute)) {
-    alert("Please enter valid values");
-  } else {
-    alert(wordParser(time));
-  }
-}
-</script>
 
