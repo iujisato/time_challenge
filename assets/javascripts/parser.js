@@ -61,6 +61,9 @@ function wordParser(time) {
     case (time.minute > 30):
       new_minute = 60 - time.minute;
       new_hour = time.hour + 1;
+      if (time.hour == 12) {
+        new_hour = 1
+      }
       return pluralize(new_minute) + " to " + wordsHash(new_hour);
   }
 }
