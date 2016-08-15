@@ -35,3 +35,8 @@ Sample Output
 ```
 thirteen minutes to six
 ```
+
+# Solutions
+Check the [lang/ruby] (https://github.com/iujisato/time_challenge/tree/lang/ruby) branch for a vanilla Ruby solution(or PR #1).
+
+Check the [lang/javascript] (https://github.com/iujisato/time_challenge/tree/lang/javascript) branch for a vanilla JS solution(or PR #2). 
