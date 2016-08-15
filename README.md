@@ -26,9 +26,9 @@ Display the time in words.
 
 Sample Input
 ````
-5  
-47  
-``` 
+5
+47
+```
 
 Sample Output
 ```

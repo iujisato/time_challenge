@@ -1,6 +1,5 @@
 require './lib/challenge_time'
 
-
 puts "Escreva as horas"
 hours = Integer(gets) rescue nil
 
@@ -20,4 +19,4 @@ while minutes.nil? || !minutes.between?(0, 60)  do
 end
 
 time = ChallengeTime.new(hours, minutes)
-time.word_parser
+puts time.word_parser
